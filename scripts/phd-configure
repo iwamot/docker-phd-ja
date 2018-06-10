@@ -1,0 +1,2 @@
+#!/bin/bash
+php /opt/phd-ja/source/doc-base/configure.php --enable-xml-details --with-lang=ja

@@ -1,0 +1,2 @@
+#!/bin/bash
+phd -d /opt/phd-ja/source/doc-base/.manual.xml -f xhtml -o /opt/phd-ja/output -P PHP
