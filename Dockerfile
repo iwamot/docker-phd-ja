@@ -23,7 +23,9 @@ RUN echo 'date.timezone = UTC' >  /usr/local/etc/php/php.ini && \
     sync && \
     ../scripts/phd-build
 
-RUN ln -s /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja
+RUN ln -sf /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja && \
+    ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log
 
 CMD ["/usr/sbin/nginx", "-g", "daemon off;"]
 EXPOSE 80
