@@ -14,11 +14,13 @@ RUN pear install doc.php.net/phd_php && \
 RUN svn co http://svn.php.net/repository/phpdoc/modules/doc-ja .
 
 RUN chmod +x ../scripts/phd-configure && \
+    sync && \
     ../scripts/phd-configure
 
 RUN echo 'date.timezone = UTC' >  /usr/local/etc/php/php.ini && \
     echo 'memory_limit = 256M' >> /usr/local/etc/php/php.ini && \
     chmod +x ../scripts/phd-build && \
+    sync && \
     ../scripts/phd-build
 
 RUN ln -s /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja
