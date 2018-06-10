@@ -16,6 +16,9 @@ stop:
 rm:
 	@docker rm $(NAME)
 
+logs:
+	@docker logs $(NAME)
+
 attach:
 	@docker attach $(NAME)
 
