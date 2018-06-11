@@ -1,0 +1,14 @@
+version: 2
+jobs:
+  build:
+    branches:
+      only:
+        - circleci
+
+    docker:
+      - image: iwamot/phd-ja
+
+    working_directory: ~/phd-ja
+
+    steps:
+      - checkout
