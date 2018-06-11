@@ -1,11 +1,12 @@
 NAME := phd-ja
 VERSION := $(shell cat VERSION)
+PORT := 8080
 
 build:
 	@docker build -t $(NAME):$(VERSION) .
 
 create:
-	@docker create -it -p 8080:80 --name $(NAME) $(NAME):$(VERSION)
+	@docker create -it -p $(PORT):80 --name $(NAME) $(NAME):$(VERSION)
 
 start:
 	@docker start $(NAME)

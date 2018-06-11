@@ -44,13 +44,13 @@ cd docker-phd-ja
 make build
 
 # Create the container
-make create
+make PORT=8081 create
 
 # Start the container
 make start
 
 # Refer documentation
-curl http://localhost:8080/phd-ja/
+curl http://localhost:8081/phd-ja/
 
 # Update source
 make phd-update
@@ -67,7 +67,7 @@ make phd-configure
 make phd-build
 
 # Refer generated documentation
-curl http://localhost:8080/phd-ja/
+curl http://localhost:8081/phd-ja/
 
 # Stop the container
 make stop
