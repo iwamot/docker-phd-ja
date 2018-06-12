@@ -1,16 +1,10 @@
 version: 2
 jobs:
   build:
-    branches:
-      only:
-        - master
-
     docker:
       - image: alpine
       - image: iwamot/phd-ja
-
     working_directory: ~/phd-ja
-
     steps:
       - run: |
           apk add --update curl
