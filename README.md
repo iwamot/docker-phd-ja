@@ -1,5 +1,7 @@
 # docker-phd-ja
 
+[![CircleCI](https://circleci.com/gh/iwamot/docker-phd-ja/tree/master.svg?style=svg)](https://circleci.com/gh/iwamot/docker-phd-ja/tree/master)
+
 ## How to use this image
 
 ```
