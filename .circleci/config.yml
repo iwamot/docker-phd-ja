@@ -1,11 +1,66 @@
 version: 2
 jobs:
-  build:
+  build_test:
     docker:
-      - image: alpine
-      - image: iwamot/phd-ja
+      - image: docker
     working_directory: ~/phd-ja
     steps:
-      - run: |
-          apk add --update curl
-          curl http://127.0.0.1/phd-ja/
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: Build image
+          command: docker build -t iwamot/phd-ja .
+      - run:
+          name: Run image
+          command: docker run -d --name phd-ja iwamot/phd-ja
+      - run:
+          name: Run test
+          command: docker run --network container:phd-ja appropriate/curl --retry 10 --retry-connrefused http://localhost/phd-ja/
+      - run:
+          name: Save image
+          command: docker save -o phd-ja.tar iwamot/phd-ja
+      - persist_to_workspace:
+          root: .
+          paths:
+            - phd-ja.tar
+  push:
+    docker:
+      - image: docker
+    working_directory: ~/phd-ja
+    steps:
+      - attach_workspace:
+          at: .
+      - setup_remote_docker
+      - run:
+          name: Load image
+          command: docker load -i phd-ja.tar
+      - run:
+          name: Log in to registry
+          command: docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+      - run:
+          name: Push latest image
+          command: docker push iwamot/phd-ja
+      - run:
+          name: Push tagged image
+          command: |
+            if [ -n "${CIRCLE_TAG}" ]; then
+              docker tag iwamot/phd-ja iwamot/phd-ja:${CIRCLE_TAG}
+              docker push iwamot/phd-ja:${CIRCLE_TAG}
+            fi
+workflows:
+  version: 2
+  build_test_push:
+    jobs:
+      - build_test:
+          filters:
+            tags:
+              only: /.*/
+      - push:
+          requires:
+            - build_test
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only:
+                - master
