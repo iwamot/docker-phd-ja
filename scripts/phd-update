@@ -1,0 +1,2 @@
+#!/bin/bash
+cd /opt/phd-ja/source && svn revert . && svn up

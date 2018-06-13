@@ -33,7 +33,7 @@ phd-build:
 	@docker exec $(NAME) ../scripts/phd-build
 
 phd-update:
-	@docker exec $(NAME) svn up
+	@docker exec $(NAME) ../scripts/phd-update
 
 build-source:
 	@docker build -t phd-ja-source - < Dockerfile.phd-ja-source
