@@ -1,5 +1,5 @@
 NAME := phd-ja
-VERSION := $(shell cat VERSION)
+VERSION := $(shell git describe --tags)
 PORT := 8080
 
 build:
