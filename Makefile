@@ -34,3 +34,6 @@ phd-build:
 
 phd-update:
 	@docker exec $(NAME) svn up
+
+build-source:
+	@docker build -t phd-ja-source - < Dockerfile.phd-ja-source
