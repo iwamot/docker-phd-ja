@@ -1,12 +1,13 @@
 NAME := phd-ja
 VERSION := $(shell git describe --tags)
-PORT := 8080
+HTTP_PORT := 8080
+FPM_PORT := 9000
 
 build:
 	@docker build -t $(NAME):$(VERSION) .
 
 create:
-	@docker create -it -p $(PORT):80 --name $(NAME) $(NAME):$(VERSION)
+	@docker create -it -p $(HTTP_PORT):80 -p ${FPM_PORT}:9000 --name $(NAME) $(NAME):$(VERSION)
 
 start:
 	@docker start $(NAME)
