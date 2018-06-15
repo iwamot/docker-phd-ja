@@ -20,10 +20,11 @@ RUN ../scripts/phd-build
 RUN ln -sf /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja && \
     ln -sf /dev/stdout /var/log/nginx/access.log && \
     ln -sf /dev/stderr /var/log/nginx/error.log && \
-    cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original
+    cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.original && \
+    rm /etc/logrotate.d/nginx
 
 COPY conf/nginx.conf /etc/nginx/sites-available/default
 COPY conf/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 EXPOSE 80 9000
-CMD ["/usr/bin/supervisord"]
+CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
