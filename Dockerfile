@@ -1,18 +1,13 @@
-FROM iwamot/phd-ja-source:rev-345137
-
-RUN apt-get update && \
-    apt-get install -y nginx sudo supervisor && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+FROM iwamot/phd-ja-source:rev-345164
 
 WORKDIR /opt/phd-ja/source
 RUN svn up
 
 COPY conf/nginx.conf /etc/nginx/sites-available/phd-ja
-RUN ln -sf /etc/nginx/sites-available/phd-ja /etc/nginx/sites-enabled/default && \
-    ln -sf /dev/stdout /var/log/nginx/access.log && \
-    ln -sf /dev/stderr /var/log/nginx/error.log && \
-    rm /etc/logrotate.d/nginx
+RUN ln -sf /etc/nginx/sites-available/phd-ja /etc/nginx/sites-enabled/default \
+ && ln -sf /dev/stdout /var/log/nginx/access.log \
+ && ln -sf /dev/stderr /var/log/nginx/error.log \
+ && rm /etc/logrotate.d/nginx
 
 COPY conf/sudoers.conf /etc/sudoers.d/phd-ja
 RUN echo 'www-data:www-data' | chpasswd
