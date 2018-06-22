@@ -7,7 +7,10 @@ build:
 	@docker build -t $(NAME):$(VERSION) .
 
 create:
-	@docker create -it -p $(HTTP_PORT):80 -p ${FPM_PORT}:9000 --name $(NAME) $(NAME):$(VERSION)
+	@docker create -it -p $(HTTP_PORT):80 -p ${FPM_PORT}:9000 \
+                 -v ${CURDIR}/admin:/opt/phd-ja/admin \
+                 -v ${CURDIR}/scripts:/opt/phd-ja/scripts \
+                 --name $(NAME) $(NAME):$(VERSION)
 
 start:
 	@docker start $(NAME)

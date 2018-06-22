@@ -1,0 +1,23 @@
+#!/bin/bash
+cd /opt/phd-ja/source
+
+filename=$1
+
+if echo $filename | fgrep -q '../'; then
+    echo 'File name is wrong.' >&2
+    exit 1
+fi
+
+en_filename="en/${filename#ja/}"
+if [ ! -f $en_filename ]; then
+    echo 'Could not write the file.' >&2
+    exit 1
+fi
+
+if [ ! -p /dev/stdin ]; then
+    echo 'Content required.' >&2
+    exit 1
+fi
+
+mkdir -p ${filename%/*}
+cat - > $filename
