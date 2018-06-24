@@ -5,7 +5,7 @@ function show_title() {
 
 function show_content() {
 ?>
-<button id="exec" type="button" class="btn btn-info btn-flat m-b-10 m-l-5" data-command="diff">Show diff</button>
+<button id="exec" type="button" class="btn btn-info btn-flat m-b-10 m-l-5" data-command="diff">Display diff</button>
 <?php
 }
 

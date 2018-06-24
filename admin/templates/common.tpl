@@ -44,18 +44,18 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
                         <li class="nav-label">Menu</li>
-                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-code-branch fa-fw"></i><span class="hide-menu">Working Copy</span></a>
-                            <ul aria-expanded="false" class="collapse">
-                                <li><a href="diff.php">Diff</a></li>
-                                <li><a href="revert.php">Revert</a></li>
-                                <li><a href="update.php">Update</a></li>
-                            </ul>
-                        </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-book fa-fw"></i><span class="hide-menu">Documentation</span></a>
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="edit.php">Edit</a></li>
                                 <li><a href="build.php">Build</a></li>
                                 <li><a href="../phd-ja/" target="view">View</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-code-branch fa-fw"></i><span class="hide-menu">Working Copy</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="diff.php">Diff</a></li>
+                                <li><a href="revert.php">Revert</a></li>
+                                <li><a href="update.php">Update</a></li>
                             </ul>
                         </li>
                     </ul>
