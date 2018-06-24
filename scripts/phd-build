@@ -1,2 +1,3 @@
 #!/bin/bash
-phd -d /opt/phd-ja/source/doc-base/.manual.xml -f xhtml -o /opt/phd-ja/output -P PHP
+cd /opt/phd-ja
+php source/doc-base/configure.php --enable-xml-details --with-lang=ja && phd -d source/doc-base/.manual.xml -f xhtml -o output -P PHP

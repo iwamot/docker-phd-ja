@@ -1,0 +1,12 @@
+#logo {color: #8892bf;}
+#content {min-height: 18em;}
+
+#terminal {background-color: #364549; color: #e3e3e3; display: none; padding: 0.5em;}
+.status {color: #f0c674;}
+
+.php_error {color: #ff8095; font-weight: bold;}
+.user_error {color: #ebd247; font-weight: bold;}
+.phd_info {color: #55c500; font-weight: bold;}
+.phd_warning {color: #a980f5; font-weight: bold;}
+
+#editor_text {display: none;}

@@ -9,7 +9,7 @@
 git clone git@github.com:iwamot/docker-phd-ja.git
 cd docker-phd-ja
 
-# Build the image
+# Build an image
 make build
 
 # Create the container
@@ -18,25 +18,17 @@ make PORT=8081 create
 # Start the container
 make start
 
-# Refer documentation
-curl http://localhost:8081/phd-ja/
+# Use the web interface
+http://localhost:8081/phd-ja-admin/
 
-# Update source
-make phd-update
+# Edit PHP scripts
+vim admin/*
 
-# Use bash in the container
+# Edit bash scripts
+vim scripts/*
+
+# Use bash in the container, if necessary
 make bash
-
-# Edit source files by vim and exit
-
-# Re-create doc-base/.manual.xml
-make phd-configure
-
-# Generate documentation
-make phd-build
-
-# Refer generated documentation
-curl http://localhost:8081/phd-ja/
 
 # Stop the container
 make stop
@@ -44,3 +36,9 @@ make stop
 # Remove the container
 make rm
 ```
+
+## Built with
+
+- [ElaAdmin](https://github.com/puikinsh/ElaAdmin)
+- [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
+- [Ace](https://github.com/ajaxorg/ace-builds)

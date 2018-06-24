@@ -1,2 +1,3 @@
 #!/bin/bash
-cd /opt/phd-ja/source && svn revert . && svn up
+cd /opt/phd-ja/source
+svn revert -R ja && svn update
