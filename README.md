@@ -45,7 +45,7 @@ This software is a **beta** version. Please use it at your own risk.
 
 ## How to contribute
 
-Any contribution is welcome. Please create an issue or a pull request.
+Any contribution is welcome. Please open an issue or create a pull request.
 
 ## How to develop
 
@@ -87,3 +87,4 @@ make rm
 - [ElaAdmin](https://github.com/puikinsh/ElaAdmin)
 - [Font Awesome Free](https://github.com/FortAwesome/Font-Awesome)
 - [Ace](https://github.com/ajaxorg/ace-builds)
+- [suggest.js](https://github.com/onozaty/suggest.js)

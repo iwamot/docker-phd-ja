@@ -61,13 +61,17 @@ function show_content() {
     $filename = @$_POST['filename'];
     $content = @$_POST['content'];
 
+    $open_info = '';
     $open_error = '';
     $save_info = '';
     $save_error = '';
 
     switch ($command) {
     case 'open':
-        if (($content = read_file($filename)) === false) {
+        $content = read_file($filename);
+        if ($content === '') {
+            $open_info = 'No lines but it is not an error. You can be the first translator for this file!';
+        } else if ($content === false) {
             $open_error = 'You can not edit the file.';
         }
         break;
@@ -91,8 +95,11 @@ function show_content() {
 <form action="edit.php" method="POST">
     <div class="form-group">
         <label>File (e.g. "ja/faq/build.xml")</label>
-        <input type="text" class="form-control input-flat" name="filename" value="<?php echo(htmlspecialchars($filename)); ?>">
-<?php if ($open_error !== '') { ?>
+        <input type="text" id="filename" class="form-control input-flat" name="filename" value="<?php echo(htmlspecialchars($filename)); ?>" autocomplete="off">
+        <div id="file_suggest"></div>
+<?php if ($open_info !== '') { ?>
+        <p class="text-info"><?php echo(htmlspecialchars($open_info)); ?></p>
+<?php } else if ($open_error !== '') { ?>
         <p class="text-danger"><?php echo(htmlspecialchars($open_error)); ?></p>
 <?php } ?>
     </div>
@@ -115,6 +122,8 @@ function show_content() {
 function show_scripts() {
 ?>
 <script src="lib/ace/src-min/ace.js" defer></script>
+<script src="lib/suggest/suggest.js" defer></script>
+<script src="js/filelist.js" defer></script>
 <script src="js/edit.js" defer></script>
 <?php
 }

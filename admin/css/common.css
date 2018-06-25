@@ -9,4 +9,27 @@
 .phd_info {color: #55c500; font-weight: bold;}
 .phd_warning {color: #a980f5; font-weight: bold;}
 
+#file_suggest {
+    background-color: white;
+    border: 1px solid #1d1f21;
+    font-family: Monaco, Menlo, "Ubuntu Mono", Consolas, source-code-pro, monospace;
+    padding: 2px;
+    position: absolute;
+    width: 90%;
+    z-index: 10;
+}
+#file_suggest div {
+    color: #1d1f21;
+    display: block;
+    overflow: hidden;
+    padding: 2px 4px;
+    width: 100%;
+}
+#file_suggest div.select {
+    background-color: #c5c8c6;
+}
+#file_suggest div.over {
+    background-color: #f0c674;
+}
+
 #editor_text {display: none;}
