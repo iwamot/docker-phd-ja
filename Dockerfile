@@ -20,6 +20,7 @@ RUN pear install doc.php.net/phd_php && pear clear-cache
 COPY conf/php.ini /usr/local/etc/php/php.ini
 COPY scripts ../scripts
 RUN chmod +x ../scripts/* && sync
+RUN ../scripts/phd-update
 RUN ../scripts/phd-build
 RUN ln -sf /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja
 

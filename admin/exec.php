@@ -25,27 +25,6 @@ chdir('/opt/phd-ja/source');
 $fp = popen($command, 'r');
 if ($fp) {
     while (($line = fgets($fp)) !== false) {
-        $line = preg_replace_callback(
-            '/(.*)\033\[(01;3[1235])m(.*)\033\[m(.*)/',
-            function ($matches) {
-                switch ($matches[2]) {
-                case '01;31':
-                    $class = 'php_error';
-                    break;
-                case '01;33':
-                    $class = 'user_error';
-                    break;
-                case '01;32':
-                    $class = 'phd_info';
-                    break;
-                case '01;35':
-                    $class = 'phd_warning';
-                    break;
-                }
-                return $matches[1] . '<span class="' . $class . '">' . $matches[3] . '</span>' . $matches[4];
-            },
-            $line
-        );
         echo($line);
     }
     pclose($fp);

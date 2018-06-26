@@ -92,7 +92,7 @@
                     </div>
                 </div>
             </div>
-            <footer class="footer">Template designed by <a href="https://colorlib.com">Colorlib</a></footer>
+            <footer class="footer">Template designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></footer>
         </div>
     </div>
 

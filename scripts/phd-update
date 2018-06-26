@@ -1,5 +1,6 @@
 #!/bin/bash
 cd /opt/phd-ja/source
+mkdir -p ../admin/js
 svn revert -R ja && \
 svn update && \
 echo 'var list = [' > ../admin/js/filelist.js && \
