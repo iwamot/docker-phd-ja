@@ -48,7 +48,7 @@
                             <ul aria-expanded="false" class="collapse">
                                 <li><a href="edit.php">Edit</a></li>
                                 <li><a href="build.php">Build</a></li>
-                                <li><a href="../phd-ja/" target="view">View</a></li>
+                                <li><a href="../phd-ja/" target="_blank">View</a></li>
                             </ul>
                         </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-code-branch fa-fw"></i><span class="hide-menu">Working Copy</span></a>
@@ -56,6 +56,15 @@
                                 <li><a href="diff.php">Diff</a></li>
                                 <li><a href="revert.php">Revert</a></li>
                                 <li><a href="update.php">Update</a></li>
+                            </ul>
+                        </li>
+                        <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-external-link-alt fa-fw"></i><span class="hide-menu">Links</span></a>
+                            <ul aria-expanded="false" class="collapse">
+                                <li><a href="https://edit.php.net/" target="_blank">Online Editor</a></li>
+                                <li><a href="http://doc.php.net/" target="_blank">Documentation Tools</a></li>
+                                <li><a href="http://php.net/manual/en/" target="_blank">PHP Manual (en)</a></li>
+                                <li><a href="http://php.net/manual/ja/" target="_blank">PHP Manual (ja)</a></li>
+                                <li><a href="http://ml.php.gr.jp/mailman/listinfo/php-doc" target="_blank">PHP-doc ML (ja)</a></li>
                             </ul>
                         </li>
                     </ul>
