@@ -13,6 +13,7 @@ Its main purpose is to make the translation work easier.
   - Build
   - View generated documentation
 - Subversion working copy
+  - Display status (svn status)
   - Display local modifications (svn diff)
   - Revert all local edits (svn revert)
   - Update (svn update)
