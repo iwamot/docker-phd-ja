@@ -33,6 +33,8 @@ function save_file($filename, $content) {
         return false;
     }
 
+    $content = preg_replace('/(\r\n|\r|\n)/', "\n", $content);
+
     fwrite($pipes[0], $content);
     fclose($pipes[0]);
 

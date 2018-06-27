@@ -53,6 +53,7 @@
                         </li>
                         <li> <a class="has-arrow" href="#" aria-expanded="false"><i class="fas fa-code-branch fa-fw"></i><span class="hide-menu">Working Copy</span></a>
                             <ul aria-expanded="false" class="collapse">
+                                <li><a href="status.php">Status</a></li>
                                 <li><a href="diff.php">Diff</a></li>
                                 <li><a href="revert.php">Revert</a></li>
                                 <li><a href="update.php">Update</a></li>

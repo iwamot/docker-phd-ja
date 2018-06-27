@@ -1,4 +1,4 @@
-FROM iwamot/phd-ja-source:rev-345164
+FROM iwamot/phd-ja-source:rev-345221
 
 WORKDIR /opt/phd-ja/source
 RUN svn up

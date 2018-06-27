@@ -8,23 +8,29 @@
                 '"': '&quot;',
             }[match];
         });
-        str = str.replace(/\033\[(01;3[1235])m(.*)\033\[m/g, function(match, p1, p2) {
-            var klass;
-            switch (p1) {
-            case '01;31':
-                klass = 'php_error';
+        str = str.replace(/\033\[(01?);(0|31|32|33|35|36)m([\S\s]*?)\033\[(?:0;0)?m/g, function(match, p1, p2, p3) {
+            var classes = [];
+            if (p1 == '01') {
+                classes.push('ansi_bold');
+            }
+            switch (p2) {
+            case '31':
+                classes.push('ansi_red');
                 break;
-            case '01;33':
-                klass = 'user_error';
+            case '32':
+                classes.push('ansi_green');
                 break;
-            case '01;32':
-                klass = 'phd_info';
+            case '33':
+                classes.push('ansi_yellow');
                 break;
-            case '01;35':
-                klass = 'phd_warning';
+            case '35':
+                classes.push('ansi_magenta');
+                break;
+            case '36':
+                classes.push('ansi_cyan');
                 break;
             }
-            return '<span class="' + klass + '">' + p2 + '</span>';
+            return '<span class="' + classes.join(' ') + '">' + p3 + '</span>';
         });
         return str;
     }

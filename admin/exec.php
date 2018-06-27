@@ -1,5 +1,11 @@
 <?php
 switch (@$_POST['command']) {
+case 'build':
+    $command = 'sudo ../scripts/phd-build 2>&1';
+    break;
+case 'status':
+    $command = '../scripts/phd-status 2>&1';
+    break;
 case 'diff':
     $command = '../scripts/phd-diff 2>&1';
     break;
@@ -8,9 +14,6 @@ case 'revert':
     break;
 case 'update':
     $command = 'sudo ../scripts/phd-update 2>&1';
-    break;
-case 'build':
-    $command = 'sudo ../scripts/phd-build 2>&1';
     break;
 default:
     http_response_code(403);

@@ -21,3 +21,11 @@ fi
 
 mkdir -p ${filename%/*}
 cat - > $filename
+
+if [ -s $filename ]; then
+    svn add ja --force
+else
+    rm $filename
+    svn delete $filename --force
+fi
+
