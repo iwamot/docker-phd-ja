@@ -23,6 +23,7 @@ RUN chmod +x ../scripts/* && sync
 RUN ../scripts/phd-update
 RUN ../scripts/phd-build
 RUN ln -sf /opt/phd-ja/output/php-chunked-xhtml /var/www/html/phd-ja
+RUN echo 'user-agent: *\ndisallow: /phd-ja/' > /var/www/html/robots.txt
 
 COPY admin ../admin
 RUN ln -sf /opt/phd-ja/admin /var/www/html/phd-ja-admin
