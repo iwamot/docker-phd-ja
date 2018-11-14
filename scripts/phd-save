@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 cd /opt/phd-ja/source
 
 filename=$1

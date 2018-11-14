@@ -74,11 +74,11 @@ http://localhost:8081/phd-ja-admin/
 # Edit PHP scripts
 vim admin/*
 
-# Edit bash scripts
+# Edit shell scripts
 vim scripts/*
 
-# Use bash in the container, if necessary
-make bash
+# Use shell in the container, if necessary
+make sh
 
 # Stop the container
 make stop

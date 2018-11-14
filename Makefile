@@ -27,8 +27,8 @@ logs:
 attach:
 	@docker attach $(NAME)
 
-bash:
-	@docker exec -it $(NAME) bash
+sh:
+	@docker exec -it $(NAME) /bin/sh
 
 phd-configure:
 	@docker exec $(NAME) ../scripts/phd-configure
