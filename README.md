@@ -32,10 +32,6 @@ Its main purpose is to make the translation work easier.
 
 ![Diff](https://raw.githubusercontent.com/iwamot/docker-phd-ja/master/screenshots/diff.png)
 
-## Demo
-
-- http://demo.iwamot.com/phd-ja-admin/
-
 ## Download
 
 You can download the Docker image from [the Docker Hub repository](https://hub.docker.com/r/iwamot/phd-ja/).
